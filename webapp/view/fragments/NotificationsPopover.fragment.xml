@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc">
+	<Popover id="notificationPopover" class="notificationPopover fade-in" showArrow="false" placement="Bottom" showHeader="false" horizontalScrolling="false" beforeClose="onBeforePopoverClose" modal="false">
+		<mvc:XMLView viewName="com.pag.flp.notifications.view.Popover"/>
+	</Popover>
+	
+</core:FragmentDefinition>

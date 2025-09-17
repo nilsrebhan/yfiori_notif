@@ -1,0 +1,275 @@
+.notificationPopover {
+    position: absolute !important;
+    top: 0px !important;
+    right: 0px !important;
+    left: auto !important;
+    width: 410px !important;
+    height: auto !important;
+    min-height: 100%;
+    padding: 0 0 0 0px;
+    min-height: 100%;
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+    border-bottom-left-radius: 0rem;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: linear-gradient(-90deg, rgba(0, 0, 0, 1.0) 0%, rgba(0, 0, 0, 0.6) 100%);
+    box-shadow: 6px 0px 20px 5px #000000;
+    backdrop-filter: blur(.1rem);
+
+}
+
+.fade-in {
+    -webkit-animation-duration: .25s;
+    animation-duration: .25s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+}
+
+@-webkit-keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(80px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes fadeOutRight {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(20px);
+    }
+}
+
+@keyframes fadeOutRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+}
+
+.fadeOutRight {
+	-webkit-animation-duration: .25s;
+    animation-duration: .25s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeOutRight;
+    animation-name: fadeOutRight;
+}
+
+
+
+
+
+.notificationPopover .sapMDialog>.sapMDialogSection {
+    background: black;
+    opacity: 0;
+}
+
+.notificationPopover .sapMPopover.sapMPopoverWithoutBar .sapMPopoverCont,
+.notificationPopover .sapMPopover .sapMIBar.sapMHeader-CTX {
+    border-radius: 0 !important;
+    background: #000 !important;
+    opacity: .8 !important;
+}
+
+.notificationPopover.sapMPopover .sapMPopoverCont {
+    background: transparent !important;
+    padding: 0 rem;
+}
+
+.notificationPopover .sapMPopoverScroll {
+    background: transparent !important;
+}
+
+.notificationPopover .sapMLIB.sapMLIBActive,
+.notificationPopover .sapMLIBHoverable:hover {
+    background: none;
+    outline: none;
+}
+
+.notificationPopover .sapMLIB.sapMLIBActive .sapMText {
+    color: black;
+}
+
+
+.headerButton {}
+
+.headerButton .sapMBtnInner {
+    border: 0 !important;
+    background: transparent !important;
+    color: white !important;
+}
+
+.headerButton .sapMBtnIcon {
+    color: white !important;
+}
+
+.headerSelect {
+    background: transparent !important;
+    color: white !important;
+}
+
+.headerSelect .sapMSelectListItemBase {
+    background: transparent !important;
+    color: white !important;
+}
+
+.notificationPopover .sapMSltHoverable:not(.sapMSltState):not(.sapMSltIconOnly):hover,
+.notificationPopover .sapMSltPressed:not(.sapMSltDisabled):not(.sapMSltState) {
+    border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.sapMSltPicker-CTX .sapMSelectListItemBaseSelected,
+.sapMComboBoxBasePicker-CTX .sapMSelectListItemBaseSelected {
+    outline: none;
+}
+
+html.sap-desktop .sapMSlt:not(.sapMSltExpanded):not(.sapMSltDisabled):focus:before {
+    outline: none;
+}
+
+.headerSelect .sapMSlt {
+    border: 0;
+}
+
+
+.headerSelect .sapMSlt>.sapMSltLabel {
+    color: white !important;
+}
+
+.headerSelect .sapMSltArrow {
+    color: white !important;
+}
+
+.notificationPopover .sapMSltHoverable:not(.sapMSltPressed):hover>.sapMSltArrow {
+    background: transparent;
+    color: white !important;
+}
+
+
+.notificationPopover .headerSelect * {
+    color: white !important;
+    background: transparent;
+}
+
+.headerSelect .sapMSelectListItemBaseSelected * {
+    /*background: black !important;
+    color: white !important;*/
+}
+
+.sapMSelectListItemBaseHoverable.sapMSelectListItemBaseSelected {
+    /*color: white !important;
+    background: black !important;*/
+}
+
+
+.markAsReadBtn {
+    font-style: normal !important;
+    font-size: .875rem !important;
+}
+
+
+.notificationCard {
+    box-sizing: border-box;
+    padding: 0.9rem 1rem 0.5rem 1rem;
+    background: #ffffff;
+    border-radius: 0.25rem;
+    width: 95%;
+    margin: 0.5rem !important;
+    margin : auto !important;
+    margin-top: 0rem !important;
+    /*margin-right: 0.5rem !important;
+    margin-left: 0.5rem !important;*/
+    margin-bottom: 0.2rem !important;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 1.10);
+    border-radius: 8px;
+}
+
+.p78ItemTitle {
+    font-weight: bold;
+
+}
+
+.notificationPopover .sapMText {
+    line-height: 1.1rem;
+
+}
+
+
+.p78ItemsFooterBar {
+    padding: 0;
+    margin-top: 0.65rem
+
+}
+
+#notificationPopover-cont,
+.p78NotificationList {min-height: 100%!important;}
+
+
+.p78NotificationListItem:focus { outline: none; }
+.p78NotificationList .sapMListNoData {
+    color: #fff !important;
+}
+
+.p78NotificationHeader {padding-bottom: 20px;}
+
+.p78NotificationListItem {}
+.p78NotificationListItemReadButton {}
+.p78NotificationListItemFooter {}
+
+
+/* Card Skip Button without Border */
+.p78NotificationListItemReadButton.sapMBtn .sapMBtnInner {
+    border: 1px solid transparent;
+}
+
+.p78NotificationListItemReadButton.sapMBtn:hover .sapMBtnInner {
+    border: 1px solid #196a99;
+}
+
+/* Empty New List*/
+/* Add spacing */
+.notificationPopover .sapMListNoData {
+    margin-top: 50px;
+}
+
+.p78NotificationListItemFooter {}
+.p78NotificationListItemFooter .sapMText {
+    color: #646464;
+    margin-top: 18px;
+    
+
+}
+
+
+.p78NotificationListText {}
+

@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.f" xmlns:card="sap.f.cards">
+	<CustomListItem type="Inactive" press="onNotificationPress" class="p78NotificationListItem">
+		<VBox class="notificationCard">
+			<HBox wrap="NoWrap" justifyContent="SpaceBetween" alignItems="Center">
+				<Text text="{title}" class="p78ItemTitle" maxLines="3"/>
+				<Button icon="sap-icon://BusinessSuiteInAppSymbols/icon-exclude-segment" type="Default" press=".onChangeNotificationStatus($event,2)" 
+				visible="{= ${statusId} === 1}" class="p78NotificationListItemReadButton" tooltip="{i18n>hideNotification}"/>
+				<!--<Button icon="sap-icon://show" type="Default" press=".onChangeNotificationStatus($event,1)" visible="{= ${statusId} === 2}"/>-->
+			</HBox>
+			<HBox>
+				<Text text="{text}" wrapping="true" class="p78NotificationListText"/>
+			</HBox>
+			<core:Fragment xmlns:core="sap.ui.core" fragmentName="com.pag.flp.notifications.view.fragments.NotificationItemFooter" type="XML" class="p78NotificationListItemFooter"/>
+		</VBox>
+	</CustomListItem>
+</core:FragmentDefinition>

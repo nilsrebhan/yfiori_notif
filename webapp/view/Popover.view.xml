@@ -1,0 +1,27 @@
+<mvc:View controllerName="com.pag.flp.notifications.controller.Popover" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<VBox width="100%">
+		<HBox class="sapUiSmallMarginTop sapUiTinyMarginBeginEnd p78NotificationHeader" justifyContent="SpaceBetween" >
+			<Select id="NotificationFilter" forceSelection="true" class="headerSelect" width="150px" change="onChangeStatusFilter">
+				<core:Item key="0" text="Neuste"/>
+				<core:Item key="1" text="Ausgeblendete"/>
+			</Select>
+			<HBox justifyContent="End">
+				<Button text="Alle als gelesen markieren" class="headerButton markAsReadBtn" width="180px" press="onMarkAllAsRead" />
+				<Button icon="sap-icon://decline" class="headerButton" press="onCloseNotificationsPopover" width="25px"/>
+			</HBox>
+		</HBox>
+		<List id="notificationList" 
+			mode="None" showSeparators="None" swipe="onSwipeNotification" backgroundDesign="Transparent" noDataText="Klasse, es warten keine Meldungen auf dich." class="p78NotificationList"
+			width="100%" updateStarted="onNotificationListUpdateStarted" updateFinished="onNotificationListUpdateFinished" 
+			items="{path : '/messageSet', 
+					sorter: { path: 'validFrom', descending: true },
+					parameters: {expand: 'toActionSet'} ,templateShareable:false
+				}">
+		<!--events: { dataRequested :'.onNotificationListDataRequested'}
+		filters: [{ path: 'statusId', operator: 'EQ', value1: 0 }],
+		events: { dataRequested :'.onOverviewTableDataRequested', dataReceived: '.onOverviewTableDataReceived' },parameters:{batchGroupId : 'overview'}}-->
+			<core:Fragment xmlns:core="sap.ui.core" fragmentName="com.pag.flp.notifications.view.fragments.NotificationItem" type="XML"/>
+		</List>
+	</VBox>
+</mvc:View>

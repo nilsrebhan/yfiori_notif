@@ -1,0 +1,9 @@
+{
+	"applications": {},
+	"bootstrapPlugins": {
+		"yfiori_notif": {
+			"component": "com.pag.flp.notifications",
+			"url": "../../../../../"
+		}
+	}
+}

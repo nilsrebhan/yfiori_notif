@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<VBox visible="false" width="100%">
+		<TextArea growing="true" width="100%" maxLength="250"/>
+		<HBox justifyContent="End">
+			<Button text="{i18n>send}" press=".onExecuteAction($event,'send')"/>
+			<Button text="{i18n>cancel}" press="onCancelComment"/>
+		</HBox>
+	</VBox>
+</core:FragmentDefinition>

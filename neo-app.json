@@ -1,0 +1,39 @@
+{
+  "welcomeFile": "index.html",
+  "routes": [
+    {
+      "path": "/resources/com/pag/flp/notifications",
+      "target": {
+        "type": "application",
+        "name": "yfiori_notif"
+      }
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "x08_meinporschecockpit",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "Connection to x08 HR backend"
+    }
+  ]
+}

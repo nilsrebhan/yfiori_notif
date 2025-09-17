@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<VBox>
+		<HBox alignItems="Center">
+			<OverflowToolbar width="240px" style="Clear" class="p78ItemsFooterBar" content="{path : 'toActionSet',templateShareable:false}">
+				<Button text="{label}" type="Default" press=".onExecuteAction($event,'action')" app:actionId="{id}"/>
+				<!--<Button text="{label}" type="{buttonStyle}" press=".onExecuteAction($event,'action')" app:actionId="{id}"/>-->
+			</OverflowToolbar>
+			<Text text="{ path: 'validFrom', type: 'sap.ui.model.type.Date', formatOptions: { style: 'short', pattern: 'dd.MM.yyyy' } }"
+				wrapping="false"/>
+		</HBox>
+		<HBox>
+			<core:Fragment xmlns:core="sap.ui.core" fragmentName="com.pag.flp.notifications.view.fragments.Comment" type="XML"/>
+		</HBox>
+	</VBox>
+</core:FragmentDefinition>
