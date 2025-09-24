@@ -8,9 +8,8 @@ sap.ui.define([
 	"sap/base/Log",
 	"sap/m/MessageBox",
 	"com/pag/flp/notifications/utils/Notifications",
-	"sap/ui/core/Fragment",
-	"com/pag/flp/notifications/js/NewRelic"
-], function (Controller, Filter, FilterOperator, MessageToast, Message, Utils, Log, MessageBox, Notifications, Fragment, NewRelic) {
+	"sap/ui/core/Fragment"
+], function (Controller, Filter, FilterOperator, MessageToast, Message, Utils, Log, MessageBox, Notifications, Fragment) {
 	"use strict";
 
 	return Controller.extend("com.pag.flp.notifications.controller.Popover", {
@@ -43,9 +42,6 @@ sap.ui.define([
 				aData.push(aListItems[i].getBindingContext().getObject());
 			}
 			Notifications.markIcon(oBtn, aData);
-			NewRelic.trackNewRelicEvent("ynotif-count", {
-				customCount: oEvent.getParameter("total")
-			});
 		},
 		onNotificationListDataRequested: function (oEvent) {
 			if (oEvent.getSource().aFilters.length === 0) {
@@ -68,8 +64,6 @@ sap.ui.define([
 				// error
 				MessageBox.error(error.message);
 			}.bind(this));
-
-			NewRelic.trackNewRelicEvent("ynotif-close", {});
 		},
 		onNotificationPress: function (oEvent) {
 
@@ -98,7 +92,6 @@ sap.ui.define([
 			return new Promise();
 		},
 		onMarkAllAsRead: function (oEvent) {
-			NewRelic.trackNewRelicEvent("ynotif-mark-all-as-read-press", {});
 			var aItems = this.getView().byId("notificationList").getItems();
 
 			for (var i = 0; i < aItems.length; i++) {
@@ -182,10 +175,6 @@ sap.ui.define([
 				this._onExecuteActionBackend(oEvent);
 			}
 
-			NewRelic.trackNewRelicEvent("ynotif-execute-event", {
-				customType: oEvent.getSource().getBindingContext().getProperty("type")
-			});
-
 		},
 		_onExecuteActionFrontend: function (oEvent) {
 			var xnavservice = sap.ushell.Container.getService("CrossApplicationNavigation");
@@ -221,7 +210,6 @@ sap.ui.define([
 				aFilters.push(new Filter("statusId", FilterOperator.EQ, 1));
 			} else { //ausgeblendete
 				aFilters.push(new Filter("statusId", FilterOperator.EQ, 2));
-				NewRelic.trackNewRelicEvent("ynotif-hidden-selected", {});
 			}
 			oBinding.filter(aFilters);
 		},

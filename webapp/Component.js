@@ -12,10 +12,9 @@ sap.ui.define([
 	"sap/base/Log",
 	"sap/ui/model/Sorter",
 	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator",
-	"com/pag/flp/notifications/js/NewRelic"
+	"sap/ui/model/FilterOperator"
 ], function (Component, Button, Bar, MessageToast, Personalization, Employee, Customizing, Notifications, MessageBox, Message, Log,
-	Sorter, Filter, FilterOperator, NewRelic) {
+	Sorter, Filter, FilterOperator) {
 
 	return Component.extend("com.pag.flp.notifications.Component", {
 
@@ -96,7 +95,6 @@ sap.ui.define([
 			} else {
 				this.notificationsPopover.openBy(sap.ui.getCore().byId("endItemsOverflowBtn"));
 			}
-			NewRelic.trackNewRelicEvent("ynotif-open", {});
 		},
 		onCloseNotifications: function () {
 			if (this.notificationsPopover) {
@@ -122,8 +120,8 @@ sap.ui.define([
 				} else {
 					if (this.getComponentData().config.hasOwnProperty("par")) {
 						this.getModel("Runtime").setProperty("/par", this.getComponentData().config.par);
-					} else {
-						throw new Error();
+					}else{
+						this.getModel("Runtime").setProperty("/par", "UNVEU");
 					}
 				}
 
@@ -169,11 +167,6 @@ sap.ui.define([
 					this.getModel().read("/messageSet", {
 						filters: [new Filter("statusId", FilterOperator.EQ, 1)],
 						success: function (oData, oResponse) {
-							try {
-								NewRelic.trackNewRelicEvent("ynotif-initial-count", {
-									customCount: oData.results.length
-								});
-							} catch (err) {}
 							
 							resolve(oData);
 
