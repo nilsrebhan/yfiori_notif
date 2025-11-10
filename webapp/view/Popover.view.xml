@@ -3,16 +3,16 @@
 	<VBox width="100%">
 		<HBox class="sapUiSmallMarginTop sapUiTinyMarginBeginEnd p78NotificationHeader" justifyContent="SpaceBetween" >
 			<Select id="NotificationFilter" forceSelection="true" class="headerSelect" width="150px" change="onChangeStatusFilter">
-				<core:Item key="0" text="Neuste"/>
-				<core:Item key="1" text="Ausgeblendete"/>
+				<core:Item key="0" text="{i18n>filter-new}"/>
+				<core:Item key="1" text="{i18n>filter-hidden}"/>
 			</Select>
 			<HBox justifyContent="End">
-				<Button text="Alle als gelesen markieren" class="headerButton markAsReadBtn" width="180px" press="onMarkAllAsRead" />
+				<Button text="{i18n>mark-as-read}" class="headerButton markAsReadBtn" width="180px" press="onMarkAllAsRead" />
 				<Button icon="sap-icon://decline" class="headerButton" press="onCloseNotificationsPopover" width="25px"/>
 			</HBox>
 		</HBox>
 		<List id="notificationList" 
-			mode="None" showSeparators="None" swipe="onSwipeNotification" backgroundDesign="Transparent" noDataText="Klasse, es warten keine Meldungen auf dich." class="p78NotificationList"
+			mode="None" showSeparators="None" swipe="onSwipeNotification" backgroundDesign="Transparent" noDataText="{i18n>notNotificationsText}" class="p78NotificationList"
 			width="100%" updateStarted="onNotificationListUpdateStarted" updateFinished="onNotificationListUpdateFinished" 
 			items="{path : '/messageSet', 
 					sorter: { path: 'validFrom', descending: true },
